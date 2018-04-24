@@ -35,7 +35,7 @@ def get_html_title(ip):
 	return "<cant parse title>"
 	
 	
-ip = input("Enter a /24 in the format e.g 10.240.32. : ")	
+ip = input("Enter a /24 in the format e.g 110.24.32. : ")	
 if ip.count('.') != 3:
 	input("IP Format is wrong. Please restart and try again ")
 	quit()
@@ -45,7 +45,7 @@ log_ping(file_name, "The format is as follow - <ip address>, <active>, <http res
 	
 with open(os.devnull, "wb") as limbo:
 	for n in range(0, 256):
-		scan_ip = ip + str(n) #"33.241.55.{0}".format(n)
+		scan_ip = ip + str(n) #"110.24.32.{0}".format(n)
 		result=subprocess.Popen(["ping", "-n", "1", "-w", "200", scan_ip],
 		stdout=limbo, stderr=limbo).wait()
 		if result:
